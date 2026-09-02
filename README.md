@@ -1,5 +1,5 @@
 # eBert_modes
-Code to calculate and visualize modes of the quadruped eBert.
+Code to calculate and visualize modes of the quadruped eBert accompanying the publication "Exploring Nonlinear Body Oscillations for Natural Quadruped Gaits".
 
 ## Overview
 
