@@ -1,22 +1,23 @@
 % dc
 
 beep off
+% % demo_Spatial
+% global eig_rng
+% eig_rng = 1:6;
 
 % simulation
 i_x = 1:6;
 i_dx = 7:12;
 f = @(t,X) [X(i_dx); M(X)^-1*( -C(X)*X(i_dx) -g(X) -spring(X) -0*eye(6)*X(i_dx) )];
 
+% =========================================================================
+eigenmode =  eig_rng( 1 ); % CHOOSE HERE MODE INDEX TO SIMULATE
+% =========================================================================
+oscillation_repetition = 5;
+
 % IC
-% from tool using chosen eigenmode and unit disk parametrization
-
-% =========================================================================
-eigenmode =  eig_rng(1); % CHOOSE HERE MODE INDEX TO SIMULATE
-% =========================================================================
-
-%X0 = X{eigenmode}([1,0])';
-X0 = [0, -0.0431, 0.1784, 0.2289, 0.0004, 0, 0, 0, 0, 0, 0, 0];
-t_end = R{eigenmode}.periods(end) * 1;
+X0 = real([R{eigenmode}.generator(end,:), zeros(1,6)]);
+t_end = R{eigenmode}.periods(end) * oscillation_repetition;
 
 % 
 timespan = linspace(0, t_end, 1e3);

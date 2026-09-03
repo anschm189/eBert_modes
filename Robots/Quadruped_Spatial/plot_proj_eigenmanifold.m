@@ -2,15 +2,14 @@
 
 %load M.mat
 %load R
-M_robot = load(['Manifold/M.mat']);
-R_robot = load(['Manifold/R.mat']);
-M1 = M_robot.M; 
-R = R_robot.R;
-
-
-% demo_Spatial
-global eig_rng
-eig_rng = [1:6];
+% M_robot = load(['Manifold/M.mat']);
+% R_robot = load(['Manifold/R.mat']);
+% M1 = M_robot.M; 
+% R = R_robot.R;
+% 
+% % demo_Spatial
+% global eig_rng
+% eig_rng = 1:6;
 
 % simulation
 i_x = 1:6;
